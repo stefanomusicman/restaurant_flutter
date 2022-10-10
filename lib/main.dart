@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'pages/login/loginPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
               image: AssetImage("assets/images/so-white.png"),
               fit: BoxFit.cover),
         ),
+        child: const LoginPage(),
       ),
     );
   }
