@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/login/loginPage.dart';
+import './universalBackground.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,14 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/images/so-white.png"),
-              fit: BoxFit.cover),
-        ),
-        child: const LoginPage(),
-      ),
+      home: const UniversalBackground(child: LoginPage()),
     );
   }
 }

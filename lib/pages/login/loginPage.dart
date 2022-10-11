@@ -11,7 +11,6 @@ class LoginPage extends StatelessWidget {
       type: MaterialType.transparency,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
             padding: const EdgeInsets.all(50),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../menu/menuPage.dart';
+import '../../universalBackground.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({super.key});
@@ -7,7 +9,14 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () => null,
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const UniversalBackground(child: MenuPage()),
+          ),
+        );
+      },
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.red,
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
