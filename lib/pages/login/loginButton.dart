@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../menu/menuPage.dart';
-import '../../universalBackground.dart';
+import '../../home/homePage.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({super.key});
@@ -13,7 +12,7 @@ class LoginButton extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const UniversalBackground(child: MenuPage()),
+            builder: (context) => const HomePage(),
           ),
         );
       },
