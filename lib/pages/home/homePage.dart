@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../pages/menu/menuPage.dart';
-import '../pages/cart/cartPage.dart';
-import '../universalBackground.dart';
+import '../menu/menuPage.dart';
+import '../cart/cartPage.dart';
+import '../../universalBackground.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
