@@ -6,6 +6,26 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Material(
+      type: MaterialType.transparency,
+      child: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(50),
+              child: Text(
+                'Cart',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.kalam(
+                  fontSize: 35,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

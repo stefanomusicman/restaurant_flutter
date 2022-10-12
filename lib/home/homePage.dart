@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import '../pages/menu/menuPage.dart';
+import '../pages/cart/cartPage.dart';
+import '../universalBackground.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,6 +12,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
+  final screens = [
+    const UniversalBackground(child: MenuPage()),
+    const UniversalBackground(child: CartPage()),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -40,24 +46,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(50),
-              child: Text(
-                'Menu',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.kalam(
-                  fontSize: 35,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+      body: screens[currentIndex],
     );
   }
 }

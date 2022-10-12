@@ -8,21 +8,23 @@ class MenuPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       type: MaterialType.transparency,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(50),
-            child: Text(
-              'Menu',
-              textAlign: TextAlign.center,
-              style: GoogleFonts.dancingScript(
-                fontSize: 35,
-                fontWeight: FontWeight.w700,
+      child: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(50),
+              child: Text(
+                'Menu',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.kalam(
+                  fontSize: 35,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
