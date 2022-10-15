@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import './menuList.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
@@ -23,6 +24,7 @@ class MenuPage extends StatelessWidget {
                 ),
               ),
             ),
+            MenuList(),
           ],
         ),
       ),

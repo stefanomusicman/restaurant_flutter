@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import './menuItems.dart'; // list of menu Items
+import './menuItems.dart'; // list of menu Items
 
 class MenuList extends StatefulWidget {
   const MenuList({super.key});
@@ -11,6 +11,16 @@ class MenuList extends StatefulWidget {
 class _MenuListState extends State<MenuList> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ListView.builder(
+      shrinkWrap: true,
+      itemCount: menuItems.length,
+      itemBuilder: ((context, index) {
+        return Card(
+          child: ListTile(
+            title: Text(menuItems[index].name),
+          ),
+        );
+      }),
+    );
   }
 }

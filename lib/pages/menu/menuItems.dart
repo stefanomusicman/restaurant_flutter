@@ -1,10 +1,14 @@
 class MenuItem {
-  String? name;
-  double? price;
-  String? image;
-  int? id;
+  String name;
+  double price;
+  String image;
+  double id;
 
-  MenuItem({this.name, this.price, this.image, this.id});
+  MenuItem(
+      {required this.name,
+      required this.price,
+      required this.image,
+      required this.id});
 }
 
 List<MenuItem> menuItems = [
