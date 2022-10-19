@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class userNameField extends StatelessWidget {
-  const userNameField({super.key});
+  final FormFieldSetter<String> onSaved;
+  const userNameField({super.key, required this.onSaved});
 
   @override
   Widget build(BuildContext context) {
-    String inputText;
+    String? inputText;
 
     return Column(
       mainAxisSize: MainAxisSize.max,
@@ -28,8 +29,11 @@ class userNameField extends StatelessWidget {
                 ),
               ),
               TextFormField(
+                onSaved: onSaved,
                 textAlign: TextAlign.center,
-                onChanged: (text) => inputText = text,
+                onChanged: (text) {
+                  inputText = text;
+                },
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.0),

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class passwordField extends StatelessWidget {
-  const passwordField({super.key});
+  final FormFieldSetter<String> onSaved;
+  const passwordField({super.key, required this.onSaved});
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,7 @@ class passwordField extends StatelessWidget {
                 ),
               ),
               TextFormField(
+                onSaved: onSaved,
                 textAlign: TextAlign.center,
                 onChanged: (text) => inputText = text,
                 decoration: InputDecoration(
