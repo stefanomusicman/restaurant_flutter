@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import './inputField.dart';
-import './loginButton.dart';
+import 'package:restaurant_app/pages/login/passwordField.dart';
+import '../home/homePage.dart';
+// import './inputField.dart';
+import './userNameField.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -28,10 +31,31 @@ class _LoginFormState extends State<LoginForm> {
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: const [
-          InputField(title: 'Email'),
-          InputField(title: 'Password'),
-          LoginButton()
+        children: [
+          userNameField(),
+          passwordField(),
+          ElevatedButton(
+            onPressed: () {
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => const HomePage(),
+              //   ),
+              // );
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+            child: Text(
+              'Login',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.comfortaa(),
+            ),
+          )
         ],
       ),
     );

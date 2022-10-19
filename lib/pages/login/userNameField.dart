@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class InputField extends StatelessWidget {
-  final String title;
-
-  InputField({super.key, required this.title});
+class userNameField extends StatelessWidget {
+  const userNameField({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +20,7 @@ class InputField extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Text(
-                  title,
+                  'Username',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.comfortaa(
                     fontSize: 17,
