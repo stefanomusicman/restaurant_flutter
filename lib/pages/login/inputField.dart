@@ -11,6 +11,9 @@ class InputField extends StatefulWidget {
 }
 
 class _InputFieldState extends State<InputField> {
+  TextEditingController textController = TextEditingController();
+  String displayText = "";
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,6 +37,7 @@ class _InputFieldState extends State<InputField> {
               ),
               TextFormField(
                 textAlign: TextAlign.center,
+                controller: textController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.0),
