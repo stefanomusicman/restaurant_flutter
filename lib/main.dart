@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'pages/login/loginPage.dart';
 import './universalBackground.dart';
+import './pages/login/loginFormInfo.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  void sendFormToBackend(loginFormInfo formData) {
+    print("Sending data to backend: ${formData.username} ${formData.password}");
+  }
+
   const MyApp({super.key});
 
   @override
@@ -16,7 +21,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const UniversalBackground(child: LoginPage()),
+      home: UniversalBackground(
+        child: LoginPage(sendFormToBackend: sendFormToBackend),
+      ),
     );
   }
 }

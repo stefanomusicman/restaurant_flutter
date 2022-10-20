@@ -3,20 +3,23 @@ import '../home/homePage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import './inputField.dart';
 
-class LoginForm extends StatefulWidget {
-  const LoginForm({super.key});
+class LoginForm extends StatelessWidget {
+  LoginForm(
+      {super.key,
+      required this.controller1,
+      required this.controller2,
+      required this.onSubmit});
 
-  @override
-  State<LoginForm> createState() => _LoginFormState();
-}
+  final controller1;
+  final controller2;
+  final VoidCallback onSubmit;
 
-class _LoginFormState extends State<LoginForm> {
   final _formKey = GlobalKey<FormState>();
 
-  final loginData = loginFormInfo(
-    userName: "",
-    password: "",
-  );
+  // final loginData = loginFormInfo(
+  //   userName: "",
+  //   password: "",
+  // );
 
   @override
   Widget build(BuildContext context) {
@@ -41,17 +44,22 @@ class _LoginFormState extends State<LoginForm> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             InputField(
-                title: 'Username',
-                onSaved: (value) => loginData.userName = value!),
+              title: 'Username',
+              controller: controller1,
+              // onSaved: (value) => loginData.userName = value!),
+            ),
             InputField(
-                title: 'Password',
-                onSaved: (value) => loginData.password = value!),
+              title: 'Password',
+              controller: controller2,
+              // onSaved: (value) => loginData.password = value!),
+            ),
             ElevatedButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  print("username: ${loginData.userName}");
-                  print("password: ${loginData.password}");
+                  // print("username: ${loginData.userName}");
+                  // print("password: ${loginData.password}");
+                  onSubmit();
                 }
                 Navigator.push(
                   context,
@@ -79,11 +87,4 @@ class _LoginFormState extends State<LoginForm> {
       ),
     );
   }
-}
-
-class loginFormInfo {
-  String? userName;
-  String? password;
-
-  loginFormInfo({this.userName, this.password});
 }

@@ -1,9 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import './loginForm.dart';
+import 'package:restaurant_app/pages/login/loginForm.dart';
+
+import 'loginFormInfo.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  final Function sendFormToBackend;
+  LoginPage({super.key, required this.sendFormToBackend});
+
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  void _onSubmit() {
+    sendFormToBackend(
+      loginFormInfo(
+          username: _usernameController.text,
+          password: _passwordController.text),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +38,11 @@ class LoginPage extends StatelessWidget {
               ),
             ),
           ),
-          const LoginForm(),
+          LoginForm(
+            controller1: _usernameController,
+            controller2: _passwordController,
+            onSubmit: _onSubmit,
+          ),
         ],
       ),
     );

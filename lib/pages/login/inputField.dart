@@ -3,9 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 
 class InputField extends StatelessWidget {
   final String title;
-  final FormFieldSetter<String> onSaved;
+  // final FormFieldSetter<String> onSaved;
+  final TextEditingController controller;
 
-  InputField({super.key, required this.title, required this.onSaved});
+  InputField(
+      {super.key,
+      required this.title,
+      // required this.onSaved,
+      required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +36,9 @@ class InputField extends StatelessWidget {
                 ),
               ),
               TextFormField(
-                onSaved: onSaved,
+                // onSaved: onSaved,
                 textAlign: TextAlign.center,
-                onChanged: (text) => inputText = text,
+                controller: controller,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.0),
