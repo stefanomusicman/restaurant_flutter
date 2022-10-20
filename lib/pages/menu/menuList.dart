@@ -22,11 +22,6 @@ class _MenuListState extends State<MenuList> {
             price: menuItems[index].price,
             image: menuItems[index].image,
           );
-          // return Card(
-          //   child: ListTile(
-          //     title: Text(menuItems[index].name),
-          //   ),
-          // );
         }),
       ),
     );

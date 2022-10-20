@@ -41,27 +41,48 @@ class MenuCard extends StatelessWidget {
               child: Image.asset(image),
             ),
             SizedBox(
-                height: 80,
-                width: 200,
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        name,
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.comfortaa(
-                          fontSize: 17,
-                        ),
-                      ),
-                      Text(
-                        price.toString(),
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.comfortaa(
-                          fontSize: 17,
-                        ),
-                      ),
-                    ]))
+              height: 80,
+              width: 200,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    name,
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.comfortaa(
+                      fontSize: 17,
+                    ),
+                  ),
+                  Text(
+                    price.toString(),
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.comfortaa(
+                      fontSize: 17,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                child: Text(
+                  'Add to Cart',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.comfortaa(),
+                ),
+              ),
+            ),
           ],
         ),
       ),
