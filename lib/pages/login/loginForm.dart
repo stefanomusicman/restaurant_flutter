@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/pages/login/passwordField.dart';
 import '../home/homePage.dart';
-import './userNameField.dart';
 import 'package:google_fonts/google_fonts.dart';
+import './inputField.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -41,8 +40,12 @@ class _LoginFormState extends State<LoginForm> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            userNameField(onSaved: (value) => loginData.userName = value!),
-            passwordField(onSaved: (value) => loginData.password = value!),
+            InputField(
+                title: 'Username',
+                onSaved: (value) => loginData.userName = value!),
+            InputField(
+                title: 'Password',
+                onSaved: (value) => loginData.password = value!),
             ElevatedButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {

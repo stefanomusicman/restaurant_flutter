@@ -3,8 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class InputField extends StatelessWidget {
   final String title;
+  final FormFieldSetter<String> onSaved;
 
-  InputField({super.key, required this.title});
+  InputField({super.key, required this.title, required this.onSaved});
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +31,7 @@ class InputField extends StatelessWidget {
                 ),
               ),
               TextFormField(
+                onSaved: onSaved,
                 textAlign: TextAlign.center,
                 onChanged: (text) => inputText = text,
                 decoration: InputDecoration(
