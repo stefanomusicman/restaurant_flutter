@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import './loginForm.dart';
-import 'package:restaurant_app/pages/login/loginForm.dart';
 
 import 'loginFormInfo.dart';
 

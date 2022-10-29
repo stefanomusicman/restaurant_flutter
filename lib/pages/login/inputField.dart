@@ -14,8 +14,6 @@ class InputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String inputText;
-
     return Column(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,

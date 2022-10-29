@@ -38,7 +38,10 @@ class MenuCard extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(35),
-              child: Image.asset(image),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.asset(image),
+              ),
             ),
             SizedBox(
               height: 80,
